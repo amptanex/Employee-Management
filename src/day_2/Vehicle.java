@@ -5,29 +5,28 @@ public class Vehicle {
     private String vehicle_number;
     private String vehicle_type;
     private String owner_name;
-    private String price;
+    private double price;
     private String manufacturing_year;
 
-    public void addVehicle(){
-        System.out.println("Adding vehicle details");
-    }
-
-    public void showVehicleDetails(){
-        System.out.println("Showing vehicle details");
-    }
-
-
-    public void calculatePremium(){
-        System.out.println("Calculating Premium");
-    }
-
-    public Vehicle(int id, String vehicle_number, String vehicle_type, String owner_name, String price, String manufacturing_year) {
+    public Vehicle(int id, String vehicle_number, String vehicle_type, String owner_name, double price, String manufacturing_year) {
         this.id = id;
         this.vehicle_number = vehicle_number;
         this.vehicle_type = vehicle_type;
         this.owner_name = owner_name;
         this.price = price;
         this.manufacturing_year = manufacturing_year;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", vehicle_number='" + vehicle_number + '\'' +
+                ", vehicle_type='" + vehicle_type + '\'' +
+                ", owner_name='" + owner_name + '\'' +
+                ", price='" + price + '\'' +
+                ", manufacturing_year='" + manufacturing_year + '\'' +
+                '}';
     }
 
     public String getOwner_name() {
@@ -46,11 +45,11 @@ public class Vehicle {
         this.manufacturing_year = manufacturing_year;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
