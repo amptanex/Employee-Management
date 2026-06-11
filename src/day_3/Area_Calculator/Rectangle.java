@@ -1,10 +1,10 @@
 package day_3.Area_Calculator;
 
 public class Rectangle extends Shape{
-    private int height;
-    private int width;
+    double height;
+    double width;
 
-    public Rectangle(int height, int width){
+    public Rectangle(double height, double width){
         this.height = height;
         this.width = width;
     }

@@ -1,8 +1,8 @@
 package day_3.Area_Calculator;
 
 public class Triangle extends Shape{
-    private double base;
-    private double height;
+    double base;
+    double height;
 
     public Triangle(double base, double height){
         this.base = base;

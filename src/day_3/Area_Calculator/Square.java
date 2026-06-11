@@ -1,9 +1,9 @@
 package day_3.Area_Calculator;
 
 public class Square extends Shape{
-    private int side;
+    double side;
 
-    public Square(int side){
+    public Square(double side){
         this.side = side;
     }
 

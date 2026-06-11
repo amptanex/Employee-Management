@@ -1,7 +1,7 @@
 package day_3.Area_Calculator;
 
 public class Circle extends Shape{
-    private double radius;
+    double radius;
 
     public Circle(double radius){
         this.radius = radius;
