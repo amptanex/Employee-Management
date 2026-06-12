@@ -4,12 +4,53 @@ import java.util.Scanner;
 
 public class AtmSimulation {
 
+    static String lastTransaction = "No Transaction yet.";
+    static Scanner sc = new Scanner(System.in);
+
+    public static void checkBalance(Account account){
+        System.out.println("Current Balance: " + account.balance);
+    }
+
+
+    public static void depositBalance(Account account){
+        System.out.print("Enter Amount to Deposit: ");
+        double amount = sc.nextDouble();
+        sc.nextLine();
+
+        if(amount > 0){
+            account.deposit(amount);
+            System.out.println("Deposit Successfully");
+            System.out.println("Current Balance: " + account.balance);
+            lastTransaction = "Deposit: " + amount + " rupees";
+        }else {
+            System.out.println("Amount Cannot be negative: " + amount);
+        }
+
+    }
+
+    public static void withdrawBalance(Account account){
+        System.out.print("Enter Amount to Withdraw: ");
+        double amount = sc.nextDouble();
+        sc.nextLine();
+
+        if(amount > 0){
+            account.withdraw(amount);
+            System.out.println("Withdraw Successfully");
+            System.out.println("Current Balance: " + account.balance);
+            lastTransaction = "Withdraw: " + amount + " rupees";
+        }else{
+            System.out.println("Amount Cannot be negative: " + amount);
+        }
+
+
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         Account account = new Account();
         System.out.println(account.balance);
-        String lastTransaction = "No Transaction yet.";
+
 
         int choice = 0;
 
@@ -28,13 +69,13 @@ public class AtmSimulation {
 
             switch (choice){
                 case 1:
-                    System.out.println("check balance");
+                    checkBalance(account);
                     break;
                 case 2:
-                    System.out.println("Depositie moeny");
+                    depositBalance(account);
                     break;
                 case 3:
-                    System.out.println("withsda");
+                    withdrawBalance(account);
                     break;
                 case 4:
                     System.out.println(lastTransaction);

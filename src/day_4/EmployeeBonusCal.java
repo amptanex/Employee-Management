@@ -27,7 +27,7 @@ public class EmployeeBonusCal {
                 calculateBonus(name, salary, "B");
                 break;
             case "C":
-                System.out.println("rating c");
+                calculateBonus(name, salary, "C");
                 break;
             case "D":
                 System.out.println("rating d");
